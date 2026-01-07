@@ -2,6 +2,7 @@ import pygame as pp
 import gif_pygame as gf
 import os
 import time
+import sys
 
 pp.init()
 pp.mixer.init()
@@ -68,7 +69,7 @@ def party():
         for event in pp.event.get():
             if event.type == pp.QUIT:
                 pp.quit()
-                return
+                sys.exit()
 
         screen.fill('pink')
 
