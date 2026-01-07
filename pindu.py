@@ -8,7 +8,7 @@ clock = pp.time.Clock()
 
 cake = gf.load("cake.GIF")
 pp.mixer.music.load("pindu.mp3")
-font = pp.font.SysFont('Corbel', 50, bold=True)
+font = pp.font.Font(None, 30)
 
 screen = pp.display.set_mode((300, 300))
 
@@ -50,6 +50,7 @@ def button():
     button_width, button_height = 200, 50
 
     # Always draw the button (default color)
+    pp.draw.rect(screen, (255, 105, 210), (button_x, button_y, button_width, button_height), border_radius=10)
 
     # Draw button label
     label = font.render("Click me!", True, "white")
@@ -59,7 +60,8 @@ def button():
     # Check for click
     if button_x <= mouse[0] <= button_x + button_width and button_y <= mouse[1] <= button_y + button_height:
         if pp.mouse.get_pressed()[0]:  # Left mouse click
-            print("Clicked!")
+            msg = "Happy birthday Pinduu! you are finally turning 20 bwahah feel old yet? i hope this year brings you loads and loads of happiness and joy, cuz u deserve it ^^ thank you for randomly coming into my life when i was down in the dumps :') u are one of the things that made 2025 bareable and i love ya for it. i hope wherever ya go our friendship stays solid ^^ couldnt have asked for a better softie than ya <3. anywhoo i actually hope u see this cuz u can be a blind fuck sometimes XD. Here's to many more of ur mischief! huggg ...happy 20th!"
+            print(msg)
             return True
     
 if __name__ == "__main__":
