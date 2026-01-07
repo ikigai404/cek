@@ -7,8 +7,13 @@ pp.mixer.init()
 clock = pp.time.Clock()
 
 cake = gf.load("static/cake.GIF")
+conf = gf.load("static/conf.GIF")
 pp.mixer.music.load("static/pindu.mp3")
 font = pp.font.Font(None, 30)
+
+conf = gf.load("static/conf.GIF")
+conf_rect = conf.get_rect()
+conf_rect.center = (150, 60)
 
 screen = pp.display.set_mode((300, 300))
 
@@ -36,11 +41,18 @@ def party():
         
     # cake
     cake_rect = cake.get_rect()
+    conf.render(screen, conf_rect.topleft)
     cake_rect.center = (screen.get_width() // 2, screen.get_height() // 2)
     cake.render(screen, cake_rect.topleft)
     clock.tick(30)
 
 def button():
+    
+    conf_rect = conf.get_rect()
+    conf_rect.center = (screen.get_width() // 2, screen.get_height() // 2)
+
+    conf.render(screen, conf_rect.topleft)
+
     mouse = pp.mouse.get_pos()
 
     button_x, button_y = 70, 110
